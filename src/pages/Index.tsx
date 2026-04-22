@@ -4,14 +4,15 @@ import Icon from "@/components/ui/icon";
 type Section = "home" | "about" | "athletes" | "certificates" | "documents" | "contacts";
 
 const ATHLETES = [
-  { id: 1, name: "Алексей Громов", rank: "1 дан", region: "Москва", weight: "80 кг", medals: 12, rating: 98, certDate: "2024-03-15", certNum: "ATF-2024-001" },
-  { id: 2, name: "Мария Соколова", rank: "2 дан", region: "СПб", weight: "57 кг", medals: 18, rating: 96, certDate: "2023-11-20", certNum: "ATF-2023-087" },
-  { id: 3, name: "Дмитрий Волков", rank: "3 дан", region: "Казань", weight: "74 кг", medals: 24, rating: 94, certDate: "2024-01-10", certNum: "ATF-2024-002" },
-  { id: 4, name: "Анна Белова", rank: "1 дан", region: "Новосибирск", weight: "49 кг", medals: 8, rating: 88, certDate: "2024-05-22", certNum: "ATF-2024-019" },
-  { id: 5, name: "Сергей Крылов", rank: "4 дан", region: "Екатеринбург", weight: "87 кг", medals: 31, rating: 99, certDate: "2022-09-05", certNum: "ATF-2022-044" },
-  { id: 6, name: "Елена Захарова", rank: "2 дан", region: "Краснодар", weight: "53 кг", medals: 15, rating: 91, certDate: "2023-07-18", certNum: "ATF-2023-061" },
-  { id: 7, name: "Павел Орлов", rank: "1 дан", region: "Ростов", weight: "63 кг", medals: 6, rating: 82, certDate: "2024-08-30", certNum: "ATF-2024-033" },
-  { id: 8, name: "Наталья Козлова", rank: "3 дан", region: "Самара", weight: "67 кг", medals: 22, rating: 93, certDate: "2023-02-14", certNum: "ATF-2023-012" },
+  { id: 9, name: "Anarkulov Linar",  rank: "5 дан", title: "Мастер спорта ATF", region: "",                weight: "",      medals: 0,  rating: 100, certDate: "2026-04-22", certNum: "RU-05-001" },
+  { id: 1, name: "Алексей Громов",   rank: "1 дан", title: "",                  region: "Москва",          weight: "80 кг", medals: 12, rating: 98,  certDate: "2024-03-15", certNum: "RU-01-001" },
+  { id: 2, name: "Мария Соколова",   rank: "2 дан", title: "",                  region: "Санкт-Петербург", weight: "57 кг", medals: 18, rating: 96,  certDate: "2023-11-20", certNum: "RU-02-087" },
+  { id: 3, name: "Дмитрий Волков",   rank: "3 дан", title: "",                  region: "Казань",          weight: "74 кг", medals: 24, rating: 94,  certDate: "2024-01-10", certNum: "RU-03-002" },
+  { id: 4, name: "Анна Белова",      rank: "1 дан", title: "",                  region: "Новосибирск",     weight: "49 кг", medals: 8,  rating: 88,  certDate: "2024-05-22", certNum: "RU-01-019" },
+  { id: 5, name: "Сергей Крылов",    rank: "4 дан", title: "",                  region: "Екатеринбург",    weight: "87 кг", medals: 31, rating: 99,  certDate: "2022-09-05", certNum: "RU-04-044" },
+  { id: 6, name: "Елена Захарова",   rank: "2 дан", title: "",                  region: "Краснодар",       weight: "53 кг", medals: 15, rating: 91,  certDate: "2023-07-18", certNum: "RU-02-061" },
+  { id: 7, name: "Павел Орлов",      rank: "1 дан", title: "",                  region: "Ростов-на-Дону",  weight: "63 кг", medals: 6,  rating: 82,  certDate: "2024-08-30", certNum: "RU-01-033" },
+  { id: 8, name: "Наталья Козлова",  rank: "3 дан", title: "",                  region: "Самара",          weight: "67 кг", medals: 22, rating: 93,  certDate: "2023-02-14", certNum: "RU-03-012" },
 ];
 
 const DOCUMENTS = [
@@ -28,7 +29,9 @@ const RANK_COLORS: Record<string, string> = {
   "2 дан": "bg-blue-900 text-blue-200",
   "3 дан": "bg-red-900 text-red-200",
   "4 дан": "bg-amber-900 text-amber-200",
-  "5 дан": "bg-purple-900 text-purple-200",
+  "5 дан": "bg-purple-800 text-purple-100",
+  "6 дан": "bg-purple-950 text-purple-100",
+  "7 дан": "bg-yellow-800 text-yellow-100",
 };
 
 export default function Index() {
@@ -395,6 +398,7 @@ export default function Index() {
                 <option value="2 дан">2 дан</option>
                 <option value="3 дан">3 дан</option>
                 <option value="4 дан">4 дан</option>
+                <option value="5 дан">5 дан</option>
               </select>
               <button
                 onClick={() => setAthleteFilter("rating")}
@@ -429,7 +433,11 @@ export default function Index() {
                         <td className="px-4 py-4 text-gray-500 text-sm">{idx + 1}</td>
                         <td className="px-4 py-4">
                           <div className="font-montserrat font-semibold text-white text-sm">{a.name}</div>
-                          <div className="text-gray-500 text-xs">{a.weight}</div>
+                          {a.title ? (
+                            <div className="text-atf-red text-xs font-oswald mt-0.5">{a.title}</div>
+                          ) : (
+                            <div className="text-gray-500 text-xs">{a.weight}</div>
+                          )}
                         </td>
                         <td className="px-4 py-4 text-gray-300 text-sm hidden sm:table-cell">{a.region}</td>
                         <td className="px-4 py-4">
@@ -549,9 +557,10 @@ export default function Index() {
                     { label: "Спортсмен", value: certResult.name },
                     { label: "Номер сертификата", value: certResult.certNum },
                     { label: "Квалификация", value: certResult.rank },
-                    { label: "Регион", value: certResult.region },
+                    ...(certResult.title ? [{ label: "Звание", value: certResult.title }] : []),
+                    ...(certResult.region ? [{ label: "Регион", value: certResult.region }] : []),
                     { label: "Дата выдачи", value: new Date(certResult.certDate).toLocaleDateString("ru-RU") },
-                    { label: "Весовая категория", value: certResult.weight },
+                    ...(certResult.weight ? [{ label: "Весовая категория", value: certResult.weight }] : []),
                   ].map(field => (
                     <div key={field.label} className="bg-black/30 rounded-lg p-4">
                       <div className="text-gray-400 text-xs font-oswald uppercase tracking-wider mb-1">{field.label}</div>
