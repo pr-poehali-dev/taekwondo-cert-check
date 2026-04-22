@@ -80,8 +80,8 @@ export default function Index() {
                 ATF
               </div>
               <div className="hidden sm:block">
-                <div className="font-oswald font-bold text-white text-sm tracking-widest uppercase">Тэквон-до</div>
-                <div className="text-[10px] text-gray-400 tracking-wider uppercase">Asian Taekwondo Federation</div>
+                <div className="font-oswald font-bold text-white text-sm tracking-widest uppercase">Тэквондо ATF</div>
+                <div className="text-[10px] text-gray-400 tracking-wider uppercase">Федерация всестилевого тэквондо</div>
               </div>
             </button>
 
@@ -147,7 +147,7 @@ export default function Index() {
               <div className="max-w-2xl">
                 <div className="flex items-center gap-3 mb-6 animate-fade-in">
                   <div className="w-8 h-0.5 bg-atf-red" />
-                  <span className="text-atf-red font-oswald text-sm tracking-widest uppercase">Asian Taekwondo Federation</span>
+                  <span className="text-atf-red font-oswald text-sm tracking-widest uppercase">Федерация всестилевого тэквондо</span>
                 </div>
                 <h1 className="section-title text-5xl sm:text-6xl lg:text-7xl text-white leading-tight mb-6 animate-slide-up">
                   СИЛА.<br />
@@ -155,7 +155,7 @@ export default function Index() {
                   <span className="text-atf-red animate-glow">ДУХ.</span>
                 </h1>
                 <p className="text-gray-300 text-lg mb-8 leading-relaxed">
-                  Официальная Азиатская Федерация Тэквон-до ITF. Объединяем спортсменов, развиваем боевое искусство, сохраняем традиции.
+                  Официальная федерация всестилевого тэквондо ATF. Объединяем спортсменов всех стилей и направлений, развиваем боевое искусство, сохраняем традиции.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <button
@@ -296,7 +296,7 @@ export default function Index() {
                 <span className="text-atf-red font-oswald text-sm tracking-widest uppercase">ATF</span>
               </div>
               <h1 className="section-title text-4xl sm:text-5xl text-white mb-4">О ФЕДЕРАЦИИ</h1>
-              <p className="text-gray-400 text-lg max-w-2xl">Азиатская Федерация Тэквон-до — официальная организация, объединяющая клубы и спортсменов по всей стране</p>
+              <p className="text-gray-400 text-lg max-w-2xl">ATF — официальная федерация всестилевого тэквондо, объединяющая клубы и спортсменов всех направлений по всей стране</p>
             </div>
           </div>
 
@@ -305,10 +305,10 @@ export default function Index() {
               <div>
                 <h2 className="section-title text-2xl text-white mb-6">Наша миссия</h2>
                 <p className="text-gray-300 leading-relaxed mb-4">
-                  Азиатская Федерация Тэквон-до (ATF) была основана с целью объединения любителей и профессионалов боевых искусств, развития Тэквон-до ITF на территории России и стран СНГ.
+                  Федерация всестилевого тэквондо ATF объединяет спортсменов и клубы всех стилей и направлений тэквондо на территории России и стран СНГ.
                 </p>
                 <p className="text-gray-300 leading-relaxed mb-6">
-                  Мы обеспечиваем прозрачную систему аттестации, проводим официальные соревнования, поддерживаем международные связи и способствуем росту каждого спортсмена.
+                  Мы обеспечиваем прозрачную систему аттестации для всех стилей, проводим открытые соревнования, поддерживаем международные связи и способствуем развитию каждого спортсмена.
                 </p>
                 <div className="space-y-3">
                   {["Официальная аттестация и выдача сертификатов", "Проведение соревнований всех уровней", "Международное сотрудничество с ITF", "Поддержка молодёжного спорта"].map(item => (
@@ -713,7 +713,7 @@ export default function Index() {
               <div className="w-10 h-10 bg-atf-red flex items-center justify-center font-oswald font-bold text-white text-sm">ATF</div>
               <div>
                 <div className="font-oswald text-white text-sm tracking-widest uppercase">Тэквон-до ATF</div>
-                <div className="text-gray-500 text-xs">Asian Taekwondo Federation</div>
+                <div className="text-gray-500 text-xs">Федерация всестилевого тэквондо</div>
               </div>
             </div>
             <div className="flex flex-wrap justify-center gap-6">
